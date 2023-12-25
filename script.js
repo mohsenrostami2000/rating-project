@@ -20,7 +20,7 @@ rate.forEach((item) => {
         }
         const cheeked = e.target;
         item.classList.add('rate')
-        rateResult = e.target.innerHTML;
+        rateResult = e.target.innerText;
         console.log(rateResult)
         // console.log(e.target)
     })
