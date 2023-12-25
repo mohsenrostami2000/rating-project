@@ -10,9 +10,19 @@
     font-family: "Overpass";
 }
 
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --dark-blue: hsla(214, 10%, 27%, 0.297);
+    --body-bg-color: hsl(216, 12%, 8%);
+    --container-bg-color: hsl(213, 19%, 18%);
+    --hover-color: hsl(217, 12%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --text-color: hsl(217, 12%, 63%);
+}
+
 /* body -------------------------------- */
 body {
-    background-color: hsl(216, 12%, 8%);
+    background-color: var(--body-bg-color);
 }
 
 /* fonts color =========== */
@@ -24,12 +34,16 @@ h1 {
 p, 
 .number{
     font-size: 15px;
-    color: hsl(217, 12%, 63%);
+    color: var(--text-color);
     font-weight: 400;
 }
 
+.p {
+    color: var(--orange);
+}
+
 .number {
-    color: hsl(0, 0%, 100%);
+    color: var(--white);
 }
 
 
@@ -37,7 +51,7 @@ p,
 /* images color */
 
 .circle-container {
-    background-color: hsla(214, 10%, 27%, 0.297);
+    background-color: var(--dark-blue);
     width: 40px;
     height: 40px;
     display: flex;
@@ -46,31 +60,33 @@ p,
     border-radius: 50%;
 }
 
-.rating-number .circle-container:hover {
+.stars {
+    background-color: var(--dark-blue);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 1.5rem 0;
+}
+
+.circle-container:hover {
     cursor: pointer;
-    background-color: hsl(25, 97%, 53%);
+    background-color: var(--hover-color);
+}
+
+.rate, .rate:hover {
+    background-color: var(--orange);
 }
 
 
 /* main container */
 
 /* stars container */
-.stars-container {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin: 1rem 10%;
-    column-gap: 1rem;
-
-}
-
-.stars-container > .circle-container {
-    height: 30px;
-    width: 30px;
-}
 
 .container {
-    background-color: hsl(213, 19%, 18%);
+    background-color: var(--container-bg-color);
     height: 400px;
     margin: 8rem 1.5rem;
     padding: 1rem;
@@ -104,13 +120,13 @@ p,
     font-size: 21px;
     font-weight: 400;
     text-transform: uppercase;
-    background-color: hsl(25, 97%, 53%);
-    color: hsl(0, 0%, 100%);
+    background-color: var(--orange);
+    color: var(--white);
 }
 
 .btn:hover {
-    background-color: hsl(0, 0%, 100%);
-    color: hsl(25, 97%, 53%);
+    background-color: var(--white);
+    color: var(--orange);
     cursor: pointer;
 }
 
@@ -130,7 +146,7 @@ footer {
     font-size: 10px; text-align: center;
 }
 .attribution a {
-    color: hsl(217, 12%, 63%);
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -144,7 +160,7 @@ footer {
 
 .result {
     text-align: center;
-    background-color: hsla(213, 16%, 27%, 0.623);
+    background-color: var(--dark-blue);
     padding: .6rem;
     width: 70%;
     margin: 0 auto;
@@ -153,7 +169,7 @@ footer {
 }
 
 .result > p {
-    color: hsl(25, 97%, 53%);
+    color: var(--orange);
 }
 
 .result-text {
@@ -206,9 +222,5 @@ footer {
         width: 375px;
         margin: 9rem auto;
 
-    }
-
-    .stars-container {
-        margin: 1rem 3.75rem;
     }
 }
